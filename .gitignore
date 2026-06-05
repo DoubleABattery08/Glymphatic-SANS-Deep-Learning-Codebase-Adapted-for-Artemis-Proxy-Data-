@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+
+# Raw LSDA CFT70 package: sits behind portal authentication and is not
+# redistributable here. The README documents manual download and placement.
+# The derived analysis table under data/interim/ is committed so modeling and
+# figures reproduce without the raw package.
+data/raw/
+
+# NHANES is fetched deterministically by scripts/download_nhanes.py.
+data/external/
+
+# OS noise
+.DS_Store
+Thumbs.db

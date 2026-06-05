@@ -1,0 +1,22 @@
+[project]
+name = "artemis-proxy"
+version = "0.1.0"
+description = "Component 2 proxy-data demonstration for the NASA Artemis II Human Research Data Methodology Challenge."
+requires-python = "==3.13.*"
+readme = "README.md"
+license = { file = "LICENSE" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 88
+target-version = ["py313"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+src = ["src", "scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
