@@ -40,6 +40,27 @@ CV_N_SPLITS = 5
 BOOTSTRAP_N_RESAMPLES = 2000
 BOOTSTRAP_CI = 0.95
 
+# NHANES control tier. The 2017-2018 cycle is the last standalone public release
+# with the standard single-cycle component files (suffix "_J"); using one named
+# cycle keeps acquisition deterministic and unambiguous.
+NHANES_CYCLE = "2017-2018"
+# The 2017-2018 release lives under the cycle's first-year directory ("2017").
+NHANES_BASE_URL = "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles"
+
+# Component files fetched, keyed by the role each plays in cohort construction.
+# Stems exclude the ".XPT" extension; the "_J" cycle suffix is already part of
+# each stem as published by CDC.
+NHANES_COMPONENTS = {
+    "DEMO_J": "demographics (age, sex)",
+    "BMX_J": "body measures (weight, height, BMI, waist)",
+    "BPX_J": "blood pressure",
+    "SMQ_J": "smoking (cigarette use)",
+    "PAQ_J": "physical activity",
+    "DIQ_J": "diabetes questionnaire",
+    "BPQ_J": "blood pressure and cholesterol diagnoses",
+    "MCQ_J": "medical conditions (cardiovascular disease, cancer)",
+}
+
 
 def set_global_seed(seed: int = SEED) -> None:
     """Seed every RNG the project touches.

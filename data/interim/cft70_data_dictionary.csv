@@ -1,0 +1,451 @@
+file,excluded_reason,n_rows,n_subjects,column,dtype,n_nonnull,n_unique
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,ID,int64,35,35
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,Subject,int64,35,7
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,Test_Phase,str,35,3
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,BR_Day,str,35,5
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,Left Ventricular Diameter Diastole,float64,35,29
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,Left Ventricular Diameter Systole,float64,35,30
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,Pulmonic Valve Acceleration Time,float64,35,35
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,Pulmonic Valve Ejection Time,float64,35,35
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,Mitral E Wave Velocity,float64,35,35
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,Mitral A Wave Velocity,float64,35,35
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,Mitral Deceleration Time,float64,35,34
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,Isovolumic Contraction Time,float64,35,33
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,Ejection Time,float64,35,34
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,Isovolumic Relaxation Time,float64,35,34
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,Aortic Valve Close Open,float64,35,35
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,Tricuspid E Velocity,float64,35,35
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,Tricuspid A Velocity,float64,35,35
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,Tricuspid Regurgitation,float64,34,34
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,TDI Tricuspid Systole,float64,34,32
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,TDI Tricuspid E Wave,float64,34,34
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,TDI Tricuspid A Wave,float64,34,33
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,TDI Right Heart Rate,float64,34,34
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,TDI Basal Septal Systole,float64,35,32
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,TDI Basal Septal E,float64,35,35
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,TDI Basal Septal A,float64,35,34
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,TDI Mitral Annular Systole,float64,35,35
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,TDI Mitral Annular E,float64,35,35
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,TDI Mitral Annular A,float64,35,34
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,TDI Left Heart Rate,float64,35,33
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,Color M-Mode Velocity Propagation Time,float64,35,35
+BRSMCF_CFT70_2D_Echo_7_Subjects.csv,,35,7,LVOT Velocity Time Integral,float64,35,35
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,ID,int64,184,184
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,Subject,int64,184,37
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,Treatment,str,184,4
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,Test_Phase,str,184,3
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,Day,str,184,5
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,Left Ventricular Diameter Diastole,float64,183,104
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,Left Ventricular Diameter Systole,float64,182,101
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,Pulmonic Valve Acceleration Time,float64,183,179
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,Pulmonic Valve Ejection Time,float64,183,181
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,Mitral E Wave Velocity,float64,184,180
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,Mitral A Wave Velocity,float64,184,179
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,Mitral Deceleration Time,float64,184,182
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,Isovolumic Contraction Time,float64,184,180
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,Ejection Time,float64,184,180
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,Isovolumic Relaxation Time,float64,184,178
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,Aortic Valve Close Open,float64,184,182
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,Tricuspid E Velocity,float64,182,179
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,Tricuspid A Velocity,float64,181,176
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,Tricuspid Regurgitation,float64,170,168
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,TDI Tricuspid Systole,float64,183,158
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,TDI Tricuspid E Wave,float64,182,172
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,TDI Tricuspid A Wave,float64,182,161
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,TDI Right Heart Rate,float64,183,177
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,TDI Basal Septal Systole,float64,184,136
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,TDI Basal Septal E,float64,184,166
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,TDI Basal Septal A,float64,184,163
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,TDI Mitral Annular Systole,float64,183,164
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,TDI Mitral Annular E,float64,183,165
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,TDI Mitral Annular A,float64,183,159
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,TDI Left Heart Rate,float64,183,179
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,Color M-Mode Velocity Propagation Time,float64,181,181
+BRSMCF_CFT70_2D_Echo_All.csv,,184,37,LVOT Velocity Time Integral,float64,183,171
+BRSMCF_CFT70_3D_Echo_All.csv,,510,37,ID,int64,510,510
+BRSMCF_CFT70_3D_Echo_All.csv,,510,37,Subject,int64,510,37
+BRSMCF_CFT70_3D_Echo_All.csv,,510,37,Treatment,str,496,4
+BRSMCF_CFT70_3D_Echo_All.csv,,510,37,analyzer,str,510,3
+BRSMCF_CFT70_3D_Echo_All.csv,,510,37,Test_Phase,str,510,3
+BRSMCF_CFT70_3D_Echo_All.csv,,510,37,BR_Day,str,510,8
+BRSMCF_CFT70_3D_Echo_All.csv,,510,37,LV mass,float64,426,423
+BRSMCF_CFT70_3D_Echo_All.csv,,510,37,LVDV,float64,420,388
+BRSMCF_CFT70_3D_Echo_All.csv,,510,37,LVSV,float64,420,339
+BRSMCF_CFT70_3D_Echo_All.csv,,510,37,Comments,str,43,8
+BRSMIMMUNE_CFT70_avgs_All.csv,,792,,ID,int64,792,792
+BRSMIMMUNE_CFT70_avgs_All.csv,,792,,GroupLabel,str,792,3
+BRSMIMMUNE_CFT70_avgs_All.csv,,792,,Statistic,str,792,3
+BRSMIMMUNE_CFT70_avgs_All.csv,,792,,Test_Phase,str,792,3
+BRSMIMMUNE_CFT70_avgs_All.csv,,792,,BR_Day,int64,792,4
+BRSMIMMUNE_CFT70_avgs_All.csv,,792,,Unit,str,792,22
+BRSMIMMUNE_CFT70_avgs_All.csv,,792,,Value,float64,726,285
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,ID,int64,2464,2464
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,GroupLabel,str,2464,3
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Subject,int64,2464,29
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Test_Phase,str,2464,3
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,BR_Day,int64,2464,4
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unit,str,2464,37
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Value,int64,2464,83
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 7,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 8,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 9,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 10,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 11,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 12,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 13,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 14,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 15,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 16,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 17,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 18,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 19,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 20,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 21,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 22,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 23,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 24,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 25,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 26,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 27,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 28,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 29,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 30,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 31,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 32,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 33,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 34,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 35,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 36,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 37,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 38,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 39,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 40,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 41,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 42,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 43,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 44,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 45,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 46,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 47,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 48,float64,0,0
+BRSMIMMUNE_CFT70_obsv_All.csv,,2464,29,Unnamed: 49,float64,0,0
+BRSMLVR_CFT70_CMV.csv,,116,28,ID,int64,116,116
+BRSMLVR_CFT70_CMV.csv,,116,28,Subject,int64,116,28
+BRSMLVR_CFT70_CMV.csv,,116,28,GroupLabel,str,116,3
+BRSMLVR_CFT70_CMV.csv,,116,28,Test_Phase,str,116,2
+BRSMLVR_CFT70_CMV.csv,,116,28,BR_Day,int64,116,4
+BRSMLVR_CFT70_CMV.csv,,116,28,CMV copies/ng urinary DNA,int64,116,1
+BRSMLVR_CFT70_EBV.csv,,840,29,ID,int64,840,840
+BRSMLVR_CFT70_EBV.csv,,840,29,Subject,int64,840,29
+BRSMLVR_CFT70_EBV.csv,,840,29,Trial,int64,840,16
+BRSMLVR_CFT70_EBV.csv,,840,29,GroupLabel,str,840,3
+BRSMLVR_CFT70_EBV.csv,,840,29,Time_Period,str,840,3
+BRSMLVR_CFT70_EBV.csv,,840,29,EBV copies/ng Salivary DNA,float64,836,84
+BRSMLVR_CFT70_VZV.csv,,856,29,ID,int64,856,856
+BRSMLVR_CFT70_VZV.csv,,856,29,Subject,int64,856,29
+BRSMLVR_CFT70_VZV.csv,,856,29,Trial,int64,856,16
+BRSMLVR_CFT70_VZV.csv,,856,29,GroupLabel,str,856,3
+BRSMLVR_CFT70_VZV.csv,,856,29,Time_Period,str,856,3
+BRSMLVR_CFT70_VZV.csv,,856,29,VZV copies/ng Salivary DNA,float64,855,13
+BRSMQCT_CFT70_Left_Hip.csv,,90,5,ID,int64,90,90
+BRSMQCT_CFT70_Left_Hip.csv,,90,5,Campaign,str,90,1
+BRSMQCT_CFT70_Left_Hip.csv,,90,5,Subject,int64,90,5
+BRSMQCT_CFT70_Left_Hip.csv,,90,5,Study Number,str,90,10
+BRSMQCT_CFT70_Left_Hip.csv,,90,5,Date,str,90,10
+BRSMQCT_CFT70_Left_Hip.csv,,90,5,Region,str,90,3
+BRSMQCT_CFT70_Left_Hip.csv,,90,5,Measure_code,str,90,9
+BRSMQCT_CFT70_Left_Hip.csv,,90,5,Measure_label,str,90,9
+BRSMQCT_CFT70_Left_Hip.csv,,90,5,BMD_g_cm2,float64,90,80
+BRSMQCT_CFT70_Right_Hip.csv,,90,5,ID,int64,90,90
+BRSMQCT_CFT70_Right_Hip.csv,,90,5,Campaign,str,90,1
+BRSMQCT_CFT70_Right_Hip.csv,,90,5,Subject,int64,90,5
+BRSMQCT_CFT70_Right_Hip.csv,,90,5,Study Number,str,90,10
+BRSMQCT_CFT70_Right_Hip.csv,,90,5,Date,str,90,10
+BRSMQCT_CFT70_Right_Hip.csv,,90,5,Region,str,90,3
+BRSMQCT_CFT70_Right_Hip.csv,,90,5,Measure_label,str,90,9
+BRSMQCT_CFT70_Right_Hip.csv,,90,5,Measure_code,str,90,9
+BRSMQCT_CFT70_Right_Hip.csv,,90,5,BMD_g_cm2,float64,90,80
+CRF_CFT70_MEALS_5160.csv,,200,1,Record,int64,200,200
+CRF_CFT70_MEALS_5160.csv,,200,1,Subject,int64,200,1
+CRF_CFT70_MEALS_5160.csv,,200,1,Date,str,200,64
+CRF_CFT70_MEALS_5160.csv,,200,1,Test_Phase,str,200,2
+CRF_CFT70_MEALS_5160.csv,,200,1,BR_Day,int64,200,43
+CRF_CFT70_MEALS_5160.csv,,200,1,Meal Option,str,200,5
+CRF_CFT70_MEALS_5160.csv,,200,1,Comments,str,18,14
+CRF_CFT70_MEALS_5160.csv,,200,1,Meal Start Time,str,200,138
+CRF_CFT70_MEALS_5160.csv,,200,1,Meal Finish Time,str,200,146
+CRF_CFT70_MEALS_5160.csv,,200,1,Duration,str,200,30
+CRF_CFT70_MEALS_5160.csv,,200,1,Meal Completed,str,200,1
+CRF_CFT70_MEALS_5160.csv,,200,1,Related to Test,str,14,1
+CRF_CFT70_MEALS_5160.csv,,200,1,Test,str,14,5
+CRF_CFT70_MEALS_5160.csv,,200,1,Issues Reported,str,200,1
+CRF_CFT70_MEALS_5160.csv,,200,1,Issue Reported Number,float64,0,0
+CRF_CFT70_MEALS_8072.csv,,264,1,Record,int64,264,264
+CRF_CFT70_MEALS_8072.csv,,264,1,Subject,int64,264,1
+CRF_CFT70_MEALS_8072.csv,,264,1,Date,str,264,85
+CRF_CFT70_MEALS_8072.csv,,264,1,Test_Phase,str,264,2
+CRF_CFT70_MEALS_8072.csv,,264,1,BR_Day,int64,264,64
+CRF_CFT70_MEALS_8072.csv,,264,1,Meal Option,str,264,5
+CRF_CFT70_MEALS_8072.csv,,264,1,Comments,str,20,18
+CRF_CFT70_MEALS_8072.csv,,264,1,Meal Start Time,str,264,169
+CRF_CFT70_MEALS_8072.csv,,264,1,Meal Finish Time,str,264,183
+CRF_CFT70_MEALS_8072.csv,,264,1,Duration,str,264,27
+CRF_CFT70_MEALS_8072.csv,,264,1,Meal Completed,str,264,2
+CRF_CFT70_MEALS_8072.csv,,264,1,Related to Test,str,17,2
+CRF_CFT70_MEALS_8072.csv,,264,1,Test,str,16,5
+CRF_CFT70_MEALS_8072.csv,,264,1,Issues Reported,str,264,1
+CRF_CFT70_MEALS_8072.csv,,264,1,Issue Reported Number,float64,0,0
+CRF_CFT70_MEALS_8936.csv,,289,1,Record,int64,289,289
+CRF_CFT70_MEALS_8936.csv,,289,1,Subject,int64,289,1
+CRF_CFT70_MEALS_8936.csv,,289,1,Date,str,289,91
+CRF_CFT70_MEALS_8936.csv,,289,1,Test_Phase,str,289,3
+CRF_CFT70_MEALS_8936.csv,,289,1,BR_Day,int64,289,71
+CRF_CFT70_MEALS_8936.csv,,289,1,Meal Option,str,289,5
+CRF_CFT70_MEALS_8936.csv,,289,1,Comments,str,22,19
+CRF_CFT70_MEALS_8936.csv,,289,1,Meal Start Time,str,289,181
+CRF_CFT70_MEALS_8936.csv,,289,1,Meal Finish Time,str,289,181
+CRF_CFT70_MEALS_8936.csv,,289,1,Duration,str,289,32
+CRF_CFT70_MEALS_8936.csv,,289,1,Meal Completed,str,289,2
+CRF_CFT70_MEALS_8936.csv,,289,1,Related to Test,str,17,1
+CRF_CFT70_MEALS_8936.csv,,289,1,Test,str,17,3
+CRF_CFT70_MEALS_8936.csv,,289,1,Issues Reported,str,289,1
+CRF_CFT70_MEALS_8936.csv,,289,1,Issue Reported Number,float64,0,0
+CRF_FARUWATERIO_CFT70_FINAL_daily.csv,,2075,24,ID,int64,2075,2075
+CRF_FARUWATERIO_CFT70_FINAL_daily.csv,,2075,24,Record_ID,int64,2075,2075
+CRF_FARUWATERIO_CFT70_FINAL_daily.csv,,2075,24,Study,str,2075,2
+CRF_FARUWATERIO_CFT70_FINAL_daily.csv,,2075,24,Subject,int64,2075,24
+CRF_FARUWATERIO_CFT70_FINAL_daily.csv,,2075,24,Test_Phase,str,2075,3
+CRF_FARUWATERIO_CFT70_FINAL_daily.csv,,2075,24,BR_Day,str,2074,83
+CRF_FARUWATERIO_CFT70_FINAL_daily.csv,,2075,24,Date,str,2075,623
+CRF_FARUWATERIO_CFT70_FINAL_daily.csv,,2075,24,Subject_Weight_kg,float64,2074,611
+CRF_FARUWATERIO_CFT70_FINAL_daily.csv,,2075,24,Daily Total Water - Grams,float64,2070,1215
+CRF_FARUWATERIO_CFT70_FINAL_daily.csv,,2075,24,Daily Water Goal - Grams,float64,2072,603
+CRF_FARUWATERIO_CFT70_FINAL_daily.csv,,2075,24,Daily Water Overage/Shortage - Grams,float64,2069,948
+CRF_FARUWATERIO_CFT70_FINAL_daily.csv,,2075,24,Completed,str,2075,2
+CRF_FARUWATERIO_CFT70_FINAL_obsv.csv,,7244,24,ID,int64,7244,7244
+CRF_FARUWATERIO_CFT70_FINAL_obsv.csv,,7244,24,Record_ID,int64,7244,2075
+CRF_FARUWATERIO_CFT70_FINAL_obsv.csv,,7244,24,Study,str,7244,2
+CRF_FARUWATERIO_CFT70_FINAL_obsv.csv,,7244,24,Subject,int64,7244,24
+CRF_FARUWATERIO_CFT70_FINAL_obsv.csv,,7244,24,Test_Phase,str,7244,3
+CRF_FARUWATERIO_CFT70_FINAL_obsv.csv,,7244,24,BR_Day,str,7242,83
+CRF_FARUWATERIO_CFT70_FINAL_obsv.csv,,7244,24,Date,str,7244,623
+CRF_FARUWATERIO_CFT70_FINAL_obsv.csv,,7244,24,Subject_Weight_kg,float64,7243,611
+CRF_FARUWATERIO_CFT70_FINAL_obsv.csv,,7244,24,Line,int64,7244,7
+CRF_FARUWATERIO_CFT70_FINAL_obsv.csv,,7244,24,Time,str,7236,785
+CRF_FARUWATERIO_CFT70_FINAL_obsv.csv,,7244,24,Full_Container_Weight_g,float64,7237,1076
+CRF_FARUWATERIO_CFT70_FINAL_obsv.csv,,7244,24,Empty_Remaining_Container_Weight_g,float64,7232,852
+CRF_FARUWATERIO_CFT70_FINAL_obsv.csv,,7244,24,Total_Fluid_Weight_g,float64,7232,1052
+CRF_FARUWATERIO_CFT70_FINAL_obsv.csv,,7244,24,Initials,str,7097,48
+CRF_FARUWATERIO_CFT70_FINAL_obsv.csv,,7244,24,Comments,str,524,132
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_0402.csv,single-subject screening DXA fragment,1,1,ID,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_0402.csv,single-subject screening DXA fragment,1,1,Subject,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_0402.csv,single-subject screening DXA fragment,1,1,Date,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_0402.csv,single-subject screening DXA fragment,1,1,Time,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_0402.csv,single-subject screening DXA fragment,1,1,NECK_BMD,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_0402.csv,single-subject screening DXA fragment,1,1,Neck T,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_0402.csv,single-subject screening DXA fragment,1,1,Neck Z,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_0402.csv,single-subject screening DXA fragment,1,1,TROCH_BMD,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_0402.csv,single-subject screening DXA fragment,1,1,Troc T,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_0402.csv,single-subject screening DXA fragment,1,1,Troc Z,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_0402.csv,single-subject screening DXA fragment,1,1,HTOT_BMD,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_0402.csv,single-subject screening DXA fragment,1,1,Hip T,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_0402.csv,single-subject screening DXA fragment,1,1,Hip Z,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_1670.csv,single-subject screening DXA fragment,1,1,ID,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_1670.csv,single-subject screening DXA fragment,1,1,Subject,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_1670.csv,single-subject screening DXA fragment,1,1,SCAN_DATE,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_1670.csv,single-subject screening DXA fragment,1,1,SCAN_TIME,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_1670.csv,single-subject screening DXA fragment,1,1,NECK_BMD,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_1670.csv,single-subject screening DXA fragment,1,1,Neck T,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_1670.csv,single-subject screening DXA fragment,1,1,Neck Z,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_1670.csv,single-subject screening DXA fragment,1,1,TROCH_BMD,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_1670.csv,single-subject screening DXA fragment,1,1,Troc T,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_1670.csv,single-subject screening DXA fragment,1,1,Troc Z,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_1670.csv,single-subject screening DXA fragment,1,1,HTOT_BMD,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_1670.csv,single-subject screening DXA fragment,1,1,Hip T,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_1670.csv,single-subject screening DXA fragment,1,1,Hip Z,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_5514.csv,single-subject screening DXA fragment,1,1,ID,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_5514.csv,single-subject screening DXA fragment,1,1,Subject,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_5514.csv,single-subject screening DXA fragment,1,1,SCAN_DATE,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_5514.csv,single-subject screening DXA fragment,1,1,SCAN_TIME,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_5514.csv,single-subject screening DXA fragment,1,1,NECK_BMD,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_5514.csv,single-subject screening DXA fragment,1,1,Neck T,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_5514.csv,single-subject screening DXA fragment,1,1,Neck Z,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_5514.csv,single-subject screening DXA fragment,1,1,TROCH_BMD,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_5514.csv,single-subject screening DXA fragment,1,1,Troc T,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_5514.csv,single-subject screening DXA fragment,1,1,Troc Z,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_5514.csv,single-subject screening DXA fragment,1,1,HTOT_BMD,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_5514.csv,single-subject screening DXA fragment,1,1,Hip T,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_L_Hip_T_Z_5514.csv,single-subject screening DXA fragment,1,1,Hip Z,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,ID,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,Subject,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,IDENTIFIER1,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,SEX,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,WEIGHT,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,HEIGHT,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,ETHNICITY,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,MENOPAUSE_YEAR,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,ANALYSIS_DATE,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,SCAN_DATE,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,SCAN_TIME,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,SCAN_TYPE,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,SCAN_MODE,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,PATIENT_KEY,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,SCANID,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,SERIAL_NUMBER,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,NO_REGIONS,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,STARTING_REGION,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,L1_INCLUDED,bool,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,L2_INCLUDED,bool,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,L3_INCLUDED,bool,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,L4_INCLUDED,bool,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,L5_INCLUDED,bool,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,L1_AREA,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,L1_BMC,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,L1_BMD,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,L2_AREA,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,L2_BMC,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,L2_BMD,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,L3_AREA,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,L3_BMC,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,L3_BMD,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,L4_AREA,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,L4_BMC,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,L4_BMD,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,L5_AREA,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,L5_BMC,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,L5_BMD,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,TOT_AREA,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,TOT_BMC,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,TOT_BMD,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,STD_TOT_BMD,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,ROI_TYPE,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,ROI_WIDTH,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,ROI_HEIGHT,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,ANAL_VERSION,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_2287.csv,single-subject screening DXA fragment,1,1,ANAL_SERIAL_NUMBER,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,ID,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,Subject,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,IDENTIFIER1,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,SEX,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,WEIGHT,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,HEIGHT,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,ETHNICITY,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,MENOPAUSE_YEAR,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,ANALYSIS_DATE,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,SCAN_DATE,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,SCAN_TIME,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,SCAN_TYPE,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,SCAN_MODE,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,PATIENT_KEY,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,SCANID,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,SERIAL_NUMBER,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,NO_REGIONS,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,STARTING_REGION,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,L1_INCLUDED,bool,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,L2_INCLUDED,bool,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,L3_INCLUDED,bool,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,L4_INCLUDED,bool,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,L5_INCLUDED,bool,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,L1_AREA,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,L1_BMC,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,L1_BMD,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,L2_AREA,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,L2_BMC,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,L2_BMD,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,L3_AREA,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,L3_BMC,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,L3_BMD,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,L4_AREA,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,L4_BMC,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,L4_BMD,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,L5_AREA,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,L5_BMC,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,L5_BMD,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,TOT_AREA,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,TOT_BMC,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,TOT_BMD,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,STD_TOT_BMD,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,ROI_TYPE,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,ROI_WIDTH,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,ROI_HEIGHT,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,ANAL_VERSION,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_S_bone_3624.csv,single-subject screening DXA fragment,1,1,ANAL_SERIAL_NUMBER,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,ID,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,Subject,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,IDENTIFIER1,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,SEX,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,WEIGHT,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,HEIGHT,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,ETHNICITY,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,MENOPAUSE_YEAR,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,ANALYSIS_DATE,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,SCAN_DATE,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,SCAN_TIME,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,SCAN_TYPE,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,SCAN_MODE,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,PATIENT_KEY,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,SCANID,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,SERIAL_NUMBER,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,NO_REGIONS,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,STARTING_REGION,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,L1_INCLUDED,bool,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,L2_INCLUDED,bool,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,L3_INCLUDED,bool,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,L4_INCLUDED,bool,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,L5_INCLUDED,bool,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,L1_AREA,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,L1_BMC,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,L1_BMD,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,L2_AREA,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,L2_BMC,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,L2_BMD,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,L3_AREA,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,L3_BMC,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,L3_BMD,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,L4_AREA,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,L4_BMC,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,L4_BMD,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,L5_AREA,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,L5_BMC,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,L5_BMD,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,TOT_AREA,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,TOT_BMC,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,TOT_BMD,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,STD_TOT_BMD,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,ROI_TYPE,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,ROI_WIDTH,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,ROI_HEIGHT,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,ANAL_VERSION,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_ALL_DATA_1131.csv,single-subject screening DXA fragment,1,1,ANAL_SERIAL_NUMBER,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_0018.csv,single-subject screening DXA fragment,1,1,ID,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_0018.csv,single-subject screening DXA fragment,1,1,Subject,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_0018.csv,single-subject screening DXA fragment,1,1,Date,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_0018.csv,single-subject screening DXA fragment,1,1,Time,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_0018.csv,single-subject screening DXA fragment,1,1,SCANID,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_0018.csv,single-subject screening DXA fragment,1,1,TOT_BMD,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_0018.csv,single-subject screening DXA fragment,1,1,Spine T,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_0018.csv,single-subject screening DXA fragment,1,1,Spine Z,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_0745.csv,single-subject screening DXA fragment,1,1,ID,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_0745.csv,single-subject screening DXA fragment,1,1,Subject,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_0745.csv,single-subject screening DXA fragment,1,1,SCAN_DATE,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_0745.csv,single-subject screening DXA fragment,1,1,SCAN_TIME,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_0745.csv,single-subject screening DXA fragment,1,1,SCANID,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_0745.csv,single-subject screening DXA fragment,1,1,TOT_BMD,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_0745.csv,single-subject screening DXA fragment,1,1,Spine T,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_0745.csv,single-subject screening DXA fragment,1,1,Spine Z,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_3624.csv,single-subject screening DXA fragment,1,1,ID,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_3624.csv,single-subject screening DXA fragment,1,1,Subject,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_3624.csv,single-subject screening DXA fragment,1,1,SCAN_DATE,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_3624.csv,single-subject screening DXA fragment,1,1,SCAN_TIME,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_3624.csv,single-subject screening DXA fragment,1,1,SCANID,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_3624.csv,single-subject screening DXA fragment,1,1,TOT_BMD,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_3624.csv,single-subject screening DXA fragment,1,1,Spine T,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_3624.csv,single-subject screening DXA fragment,1,1,Spine Z,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_8591.csv,single-subject screening DXA fragment,1,1,ID,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_8591.csv,single-subject screening DXA fragment,1,1,Subject,int64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_8591.csv,single-subject screening DXA fragment,1,1,SCAN_DATE,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_8591.csv,single-subject screening DXA fragment,1,1,SCAN_TIME,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_8591.csv,single-subject screening DXA fragment,1,1,SCANID,str,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_8591.csv,single-subject screening DXA fragment,1,1,TOT_BMD,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_8591.csv,single-subject screening DXA fragment,1,1,Spine T,float64,1,1
+MR035G_AG_PILOT_DXA_SCREEN_Spine_T_Z_8591.csv,single-subject screening DXA fragment,1,1,Spine Z,float64,1,1
