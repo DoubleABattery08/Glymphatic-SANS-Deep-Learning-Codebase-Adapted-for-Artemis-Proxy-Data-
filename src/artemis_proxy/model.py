@@ -88,11 +88,13 @@ class MechanismConstrainedMTL:
         self,
         lambda_reg: float = config.MTL_LAMBDA_REG,
         task: str = "classification",
+        seed: int = config.SEED,
     ) -> None:
         if task not in ("classification", "regression"):
             raise ValueError(f"Unknown task: {task}")
         self.lambda_reg = lambda_reg
         self.task = task
+        self.seed = seed
         self._feature_scaler = StandardScaler()
         self._net: _MultiTaskNet | None = None
         self._aux_mean: np.ndarray | None = None
@@ -109,7 +111,8 @@ class MechanismConstrainedMTL:
         self, X: np.ndarray, y: np.ndarray, Z: np.ndarray, mask: np.ndarray
     ) -> MechanismConstrainedMTL:
         # Deterministic initialization regardless of call order (folds, bootstrap).
-        torch.manual_seed(config.SEED)
+        # The seed is configurable so multi-seed stability can vary it reproducibly.
+        torch.manual_seed(self.seed)
         x_scaled = self._feature_scaler.fit_transform(X)
         masked_Z = np.where(mask, Z, np.nan)
         self._aux_mean = np.nanmean(masked_Z, axis=0)
