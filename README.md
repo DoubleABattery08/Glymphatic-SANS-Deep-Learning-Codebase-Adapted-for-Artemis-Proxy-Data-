@@ -35,8 +35,12 @@ Established methods translated from other domains, not an invention:
   preserving within-subject dependence (Cameron et al. 2008; Efron & Tibshirani
   1993).
 - **baseline-imbalance handling** — standardized mean differences across
-  countermeasure arms, covariate adjustment, and a granular-arm sensitivity
-  analysis.
+  countermeasure arms, covariate adjustment, a granular-arm sensitivity analysis,
+  and a before/after inverse-probability-weighting love plot.
+- **robustness and small-sample stress tests** — an auxiliary-weight
+  (`lambda_reg`) sweep, multi-seed stability of the mechanism-constraint gap, a
+  calibration assessment, and an n=4 transfer stress test that mirrors the
+  Artemis crew-size use case (train on a larger analog cohort, test on four).
 
 The written components use glymphatics/SANS from brain MRI as the worked example.
 This demonstration uses no imaging; it instantiates the same method on bed rest
@@ -45,15 +49,24 @@ to the SANS application.
 
 ### Outcome, auxiliaries, and the mechanism constraint
 
-- **Primary outcome (binary):** a marked PRE_TEST -> POST_TEST reduction in
-  left-ventricular (LV) mass, the canonical cardiac response to bed-rest
+- **Primary outcome (binary headline):** a marked PRE_TEST -> POST_TEST reduction
+  in left-ventricular (LV) mass, the canonical cardiac response to bed-rest
   unloading. The per-subject continuous change is dichotomized at its observed
-  median (a distribution-driven, non-arbitrary cutpoint), and the continuous
-  change is reported alongside the label.
+  median (a distribution-driven, non-arbitrary cutpoint).
+- **Continuous companion:** the same `lv_mass_change` is also regressed directly
+  (the framework's primary head can be a classifier or a regressor) under the
+  identical subject-level cross-validation. The median split discards information,
+  so the continuous analysis is the better-powered confirmation of whether the
+  mechanism constraint helps; both are reported even when modest.
 - **Auxiliary regression targets (mechanism constraint):** whole-body fluid
   status (body weight, net water balance) and diastolic loading indices (mitral
   E/A, isovolumic relaxation time, TDI mitral annular E'), all on the same
   fluid-loading axis as the outcome.
+- **Exploratory third modality:** immune biomarkers (T-cell subset ratios,
+  lymphocyte count) and latent-virus reactivation (CMV, EBV, VZV copy number) can
+  be added as further masked auxiliary heads. Their mechanistic link to cardiac
+  adaptation is weaker, so they are reported separately as a multi-modal /
+  masked-loss stress test under heavy missingness, never as the headline.
 - **Leakage prevention:** the outcome's own constituents (LV mass, LVDV, LVSV)
   are never used as features or auxiliaries, and no auxiliary target appears
   among the features; this is asserted in code.
@@ -122,6 +135,11 @@ Equivalently, `make all`, or the numbered steps individually:
 .venv\Scripts\python.exe scripts/build_data_dictionary.py
 .venv\Scripts\python.exe scripts/build_cohorts.py
 .venv\Scripts\python.exe scripts/run_validation.py
+.venv\Scripts\python.exe scripts/run_lambda_sweep.py
+.venv\Scripts\python.exe scripts/run_seed_stability.py
+.venv\Scripts\python.exe scripts/run_multimodal_extension.py
+.venv\Scripts\python.exe scripts/run_transfer_stress.py
+.venv\Scripts\python.exe scripts/run_calibration.py
 .venv\Scripts\python.exe scripts/integrate_control.py
 .venv\Scripts\python.exe scripts/make_figures.py
 ```
@@ -139,6 +157,13 @@ Tables in `results/tables/` and figures in `results/figures/`:
 | `baseline_smd.csv`, `baseline_imbalance.png` | Baseline covariate imbalance |
 | `model_comparison.csv`, `model_comparison.png` | Subject-level AUC per model |
 | `mtl_vs_baseline.csv` | Mechanism-constraint AUC contribution |
+| `continuous_outcome.csv`, `continuous_mtl_vs_baseline.csv` | Continuous-outcome companion (MAE, R-squared) |
+| `lambda_sweep.csv` | Auxiliary-weight robustness sweep |
+| `seed_stability.csv`, `seed_stability_summary.csv` | Multi-seed stability of the gap |
+| `multimodal_extension.csv` | Immune-and-virus exploratory extension |
+| `transfer_stress.csv` | n=4 small-sample transfer stress test |
+| `calibration.csv`, `calibration_reliability.csv`, `calibration.png` | Calibration of the primary model |
+| `love_plot_smd.csv`, `love_plot.png` | SMD before/after IPTW adjustment |
 | `auxiliary_group_differences.csv` | Auxiliary differences by arm |
 | `imbalance_adjustment.csv` | Countermeasure association, adjusted |
 | `arm_sensitivity.csv`, `arm_sensitivity.png` | Per-arm outcome rates |
@@ -155,16 +180,39 @@ Expected metric values (a reviewer can confirm a match):
 - Subject-level AUC: multi-task 0.713, single-task 0.654, elastic-net 0.670.
 - Mechanism-constraint contribution (multi-task minus single-task AUC): +0.059,
   clustered-bootstrap 95% interval (-0.019, +0.153).
+- Continuous companion (`lv_mass_change` regressed under the same CV): multi-task
+  MAE 10.36 g and R-squared -0.116, single-task MAE 10.89 g and R-squared -0.173;
+  paired MAE improvement +0.53 g (95% interval -0.35, +1.46). Both R-squared are
+  negative — neither model beats the mean predictor at this sample size — but the
+  multi-task model is consistently the less-poor of the two, agreeing in direction
+  with the binary headline.
+- Auxiliary-weight sweep: every non-zero `lambda_reg` in {0.1, 0.25, 0.5, 1.0}
+  beats single-task on AUC (+0.05 to +0.08) and on continuous MAE/R-squared, so
+  the advantage is not an artifact of the configured 0.5.
+- Multi-seed stability (10 seeds): mean multi-task-minus-single-task AUC gap
+  +0.032 (SD 0.035), positive in 8 of 10 seeds.
+- Immune-and-virus extension (11 auxiliaries): AUC unchanged at 0.713 but slightly
+  worse accuracy/Brier/continuous-MAE, so the cardiovascular-and-fluid set stays
+  the headline and the extension is a documented multi-modal stress test.
+- Small-sample transfer (200 holdouts of 4 subjects): multi-task beats or ties
+  single-task on subject accuracy in 96.5% of splits (mean 0.624 vs 0.588) and on
+  continuous MAE in 59% (10.75 vs 11.04 g).
+- Calibration of the primary model: slope 0.71 (mild over-confidence), intercept
+  0.13, Brier 0.219; the reliability bins track the diagonal.
 - Countermeasure association with the outcome: coefficient -0.327 unadjusted,
-  -0.365 adjusted for the imbalanced baseline covariates.
+  -0.365 adjusted for the imbalanced baseline covariates. Stabilized IPTW on the
+  three imbalanced covariates shrinks their |SMD| (0.72/0.40/0.37 -> 0.31/0.06/
+  0.21) with visible residual imbalance.
 - Per-arm marked-reduction rate: Control 0.73, Exercise A 0.43, Exercise B 0.40,
   Flywheel 0.38.
 - Bed rest baseline weight 77.0 kg sits at mean z -0.17 (median 50th percentile)
   of the NHANES reference (80.6 kg); the reference pins the scale far more
   tightly (sd interval half-width 1.8 kg vs 3.2 kg).
 
-Approximate runtime: under three minutes on a modern laptop CPU after
-installation, dominated by the NHANES download (~19 MB) and validation.
+Approximate runtime: roughly 20-25 minutes on a modern laptop CPU after
+installation, dominated by the n=4 transfer stress test (200 retrained
+split-pairs) and the subject-level validation; the individual core steps each run
+in a few minutes.
 
 ## Interpretation
 
@@ -176,8 +224,20 @@ exercise and artificial-gravity countermeasures, and adjusting for the imbalance
 baseline slightly strengthened this association. The mechanism-constrained
 multi-task model edged out the single-task baseline and the elastic-net
 cross-check on subject-level AUC, and its advantage over the baseline was
-positive but not separable from zero at this sample size. The bed rest subjects
-were anthropometrically typical of the astronaut-like reference population.
+positive but not separable from zero at this sample size.
+
+The polish-pass robustness checks tell a consistent, deliberately modest story.
+The better-powered continuous regression agrees in direction (multi-task lower
+error) while both models trail the mean predictor, so the benefit is real in
+sign but small in size. The advantage holds across every auxiliary weight in the
+sweep and is positive in 8 of 10 random seeds, so it is not a single-weight or
+single-seed artifact. It is most pronounced exactly where it matters for Artemis:
+in the n=4 transfer stress test the multi-task model wins or ties the single-task
+baseline on accuracy in 96.5% of crew-sized holdouts. The exploratory immune and
+virus heads neither help nor materially hurt the headline, demonstrating
+multi-modal ingestion under heavy missingness without overclaiming. The primary
+model is reasonably calibrated (slope 0.71), and the bed rest subjects were
+anthropometrically typical of the astronaut-like reference population.
 
 ## Limitations
 
