@@ -40,6 +40,7 @@ def to_supervised(frame: pd.DataFrame) -> dict[str, np.ndarray]:
     return {
         "X": frame[feature_cols].to_numpy(dtype=np.float64),
         "y": frame["outcome"].to_numpy(dtype=np.float64),
+        "y_continuous": frame["lv_mass_change"].to_numpy(dtype=np.float64),
         "Z": aux.to_numpy(dtype=np.float64),
         "mask": aux.notna().to_numpy(),
         "subjects": frame["Subject"].to_numpy(),
@@ -73,19 +74,31 @@ def _masked_mse(
 
 
 class MechanismConstrainedMTL:
-    """Shared-trunk multi-task classifier with masked auxiliary regression.
+    """Shared-trunk multi-task learner with masked auxiliary regression.
 
-    With ``lambda_reg = 0`` this is the single-task baseline. Feature and
-    auxiliary-target scalers are fit on the training data only, so no test-fold
-    statistics leak into training.
+    The primary head is a binary classifier (``task="classification"``, the
+    headline that mirrors the SANS framing) or a continuous regressor
+    (``task="regression"``, the better-powered companion). The auxiliary heads are
+    always masked regression. With ``lambda_reg = 0`` this is the single-task
+    baseline. Feature, auxiliary-target, and (for regression) primary-target
+    scalers are fit on the training data only, so no test-fold statistics leak.
     """
 
-    def __init__(self, lambda_reg: float = config.MTL_LAMBDA_REG) -> None:
+    def __init__(
+        self,
+        lambda_reg: float = config.MTL_LAMBDA_REG,
+        task: str = "classification",
+    ) -> None:
+        if task not in ("classification", "regression"):
+            raise ValueError(f"Unknown task: {task}")
         self.lambda_reg = lambda_reg
+        self.task = task
         self._feature_scaler = StandardScaler()
         self._net: _MultiTaskNet | None = None
         self._aux_mean: np.ndarray | None = None
         self._aux_std: np.ndarray | None = None
+        self._y_mean: float = 0.0
+        self._y_std: float = 1.0
 
     def _scale_aux(self, Z: np.ndarray, mask: np.ndarray) -> np.ndarray:
         scaled = (Z - self._aux_mean) / self._aux_std
@@ -104,8 +117,15 @@ class MechanismConstrainedMTL:
         self._aux_std = np.where(self._aux_std > 0, self._aux_std, 1.0)
         z_scaled = self._scale_aux(Z, mask)
 
+        if self.task == "regression":
+            # Standardize the continuous primary target for stable optimization;
+            # predictions are returned to the original scale at inference.
+            self._y_mean = float(np.mean(y))
+            self._y_std = float(np.std(y)) or 1.0
+        y_fit = (y - self._y_mean) / self._y_std
+
         x_t = torch.tensor(x_scaled, dtype=torch.float32)
-        y_t = torch.tensor(y, dtype=torch.float32)
+        y_t = torch.tensor(y_fit, dtype=torch.float32)
         z_t = torch.tensor(z_scaled, dtype=torch.float32)
         mask_t = torch.tensor(mask, dtype=torch.float32)
 
@@ -116,25 +136,39 @@ class MechanismConstrainedMTL:
             weight_decay=config.MTL_WEIGHT_DECAY,
         )
         bce = nn.BCEWithLogitsLoss()
+        mse = nn.MSELoss()
         self._net.train()
         for _ in range(config.MTL_EPOCHS):
             optimizer.zero_grad()
-            logit, aux_pred = self._net(x_t)
-            loss = config.MTL_LAMBDA_CLASS * bce(logit, y_t)
+            primary, aux_pred = self._net(x_t)
+            if self.task == "classification":
+                loss = config.MTL_LAMBDA_CLASS * bce(primary, y_t)
+            else:
+                loss = config.MTL_LAMBDA_CLASS * mse(primary, y_t)
             if self.lambda_reg > 0:
                 loss = loss + self.lambda_reg * _masked_mse(aux_pred, z_t, mask_t)
             loss.backward()
             optimizer.step()
         return self
 
-    def predict_proba(self, X: np.ndarray) -> np.ndarray:
+    def _primary_output(self, X: np.ndarray) -> np.ndarray:
         if self._net is None:
             raise RuntimeError("Model must be fit before prediction.")
         self._net.eval()
         x_t = torch.tensor(self._feature_scaler.transform(X), dtype=torch.float32)
         with torch.no_grad():
-            logit, _ = self._net(x_t)
-        return torch.sigmoid(logit).numpy()
+            primary, _ = self._net(x_t)
+        return primary.numpy()
+
+    def predict_proba(self, X: np.ndarray) -> np.ndarray:
+        if self.task != "classification":
+            raise RuntimeError("predict_proba is only defined for classification.")
+        return 1.0 / (1.0 + np.exp(-self._primary_output(X)))
+
+    def predict(self, X: np.ndarray) -> np.ndarray:
+        if self.task != "regression":
+            raise RuntimeError("predict is only defined for regression.")
+        return self._primary_output(X) * self._y_std + self._y_mean
 
 
 def build_elastic_net() -> Pipeline:

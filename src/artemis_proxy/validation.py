@@ -20,7 +20,13 @@ from collections.abc import Callable
 
 import numpy as np
 import pandas as pd
-from sklearn.metrics import accuracy_score, brier_score_loss, roc_auc_score
+from sklearn.metrics import (
+    accuracy_score,
+    brier_score_loss,
+    mean_absolute_error,
+    r2_score,
+    roc_auc_score,
+)
 from sklearn.model_selection import GroupKFold
 
 from artemis_proxy import config, model
@@ -93,6 +99,49 @@ def subject_metrics(predictions: pd.DataFrame) -> dict[str, float]:
         "accuracy": accuracy_score(y, prob >= 0.5),
         "brier": brier_score_loss(y, prob),
     }
+
+
+def subject_cv_regression(make_estimator: Estimator, arrays: dict) -> pd.DataFrame:
+    """Out-of-fold subject-level predictions of the continuous outcome.
+
+    Mirrors ``subject_cv_predictions`` but for the continuous ``lv_mass_change``
+    primary target, under the identical grouped split and leakage assertion. The
+    continuous outcome uses the full information in the change rather than a
+    median split, so it is the better-powered companion to the binary headline.
+    """
+
+    subjects = arrays["subjects"]
+    y_continuous = arrays["y_continuous"]
+    oof = np.full(len(y_continuous), np.nan)
+    splitter = GroupKFold(n_splits=config.CV_N_SPLITS)
+    for train_idx, test_idx in splitter.split(arrays["X"], y_continuous, subjects):
+        _assert_no_subject_leakage(subjects, train_idx, test_idx)
+        estimator = make_estimator()
+        estimator.fit(
+            arrays["X"][train_idx],
+            y_continuous[train_idx],
+            arrays["Z"][train_idx],
+            arrays["mask"][train_idx],
+        )
+        oof[test_idx] = estimator.predict(arrays["X"][test_idx])
+    frame = pd.DataFrame({"Subject": subjects, "y": y_continuous, "pred": oof})
+    return frame.groupby("Subject", as_index=False).agg(
+        y=("y", "first"), pred=("pred", "mean")
+    )
+
+
+def mae_statistic(frame: pd.DataFrame) -> float:
+    return float(mean_absolute_error(frame["y"], frame["pred"]))
+
+
+def r2_statistic(frame: pd.DataFrame) -> float:
+    if frame["y"].nunique() < 2:
+        return np.nan
+    return float(r2_score(frame["y"], frame["pred"]))
+
+
+def regression_metrics(frame: pd.DataFrame) -> dict[str, float]:
+    return {"mae": mae_statistic(frame), "r2": r2_statistic(frame)}
 
 
 def clustered_bootstrap_ci(
