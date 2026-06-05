@@ -30,7 +30,9 @@ from artemis_proxy import cft70, config, imbalance, model, targets, validation
 
 def _subject_baseline_frame(table: pd.DataFrame) -> pd.DataFrame:
     outcome = targets.primary_outcome(table)
-    arms = cft70.subject_arm()
+    arms = table[["Subject", "arm_granular", "is_countermeasure"]].drop_duplicates(
+        subset="Subject"
+    )
     baseline = table[table["Test_Phase"] == "PRE_TEST"][
         ["Subject", *cft70.ECHO_2D_FEATURES]
     ]
@@ -65,7 +67,7 @@ def _paired_auc_difference_ci(
 def main() -> None:
     config.set_global_seed()
     config.TABLES.mkdir(parents=True, exist_ok=True)
-    table = cft70.build_analysis_table()
+    table = cft70.load_analysis_table()
     frame = targets.build_modeling_frame(table)
     arrays = model.to_supervised(frame)
 

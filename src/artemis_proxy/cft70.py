@@ -186,3 +186,35 @@ def build_analysis_table() -> pd.DataFrame:
         table["Test_Phase"], categories=PHASE_ORDER, ordered=True
     )
     return table.sort_values(KEYS).reset_index(drop=True)
+
+
+ANALYSIS_TABLE_PATH = config.DATA_INTERIM / "cft70_analysis_table.csv"
+
+
+def has_raw() -> bool:
+    """Whether the authentication-gated raw echo backbone is present locally."""
+
+    return (config.CFT70_RAW / "BRSMCF_CFT70_2D_Echo_All.csv").exists()
+
+
+def load_analysis_table() -> pd.DataFrame:
+    """Return the analysis table, preferring the committed derived extract.
+
+    The extract reproduces the modeling and figures without the gated raw
+    package; it is rebuilt from raw only when the extract is absent. The ordered
+    phase categorical is restored either way so downstream sorting is stable.
+    """
+
+    if ANALYSIS_TABLE_PATH.exists():
+        table = pd.read_csv(ANALYSIS_TABLE_PATH)
+    elif has_raw():
+        table = build_analysis_table()
+    else:
+        raise FileNotFoundError(
+            f"Neither the committed extract {ANALYSIS_TABLE_PATH} nor the raw "
+            f"CFT70 package in {config.CFT70_RAW} is available."
+        )
+    table["Test_Phase"] = pd.Categorical(
+        table["Test_Phase"], categories=PHASE_ORDER, ordered=True
+    )
+    return table.sort_values(KEYS).reset_index(drop=True)

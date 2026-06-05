@@ -21,7 +21,7 @@ def main() -> None:
     config.set_global_seed()
     config.TABLES.mkdir(parents=True, exist_ok=True)
 
-    table = cft70.build_analysis_table()
+    table = cft70.load_analysis_table()
     bed_rest_weight = (
         table[table["Test_Phase"] == "PRE_TEST"]
         .groupby("Subject")["body_weight_kg"]

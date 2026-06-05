@@ -56,10 +56,13 @@ def main() -> None:
     config.DATA_INTERIM.mkdir(parents=True, exist_ok=True)
     csv_paths = sorted(config.CFT70_RAW.glob("*.csv"))
     if not csv_paths:
-        raise FileNotFoundError(
-            f"No CFT70 CSV files found in {config.CFT70_RAW}. "
-            "See the README for download and placement instructions."
+        # The dictionary is committed, so on a clean clone without the gated raw
+        # package this step is a no-op rather than an error.
+        print(
+            f"No raw CFT70 files in {config.CFT70_RAW}; keeping the committed "
+            "data dictionary."
         )
+        return
     dictionary = pd.concat(
         (describe_file(path) for path in csv_paths), ignore_index=True
     )

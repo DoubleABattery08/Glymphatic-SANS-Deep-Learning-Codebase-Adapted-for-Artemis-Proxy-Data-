@@ -29,8 +29,12 @@ def main() -> None:
     config.DATA_PROCESSED.mkdir(parents=True, exist_ok=True)
     config.TABLES.mkdir(parents=True, exist_ok=True)
 
-    analysis_table = cft70.build_analysis_table()
-    analysis_path = config.DATA_INTERIM / "cft70_analysis_table.csv"
+    # Rebuild the derived extract from the raw package when it is present;
+    # otherwise fall back to the committed extract so the stage still runs.
+    analysis_table = (
+        cft70.build_analysis_table() if cft70.has_raw() else cft70.load_analysis_table()
+    )
+    analysis_path = cft70.ANALYSIS_TABLE_PATH
     analysis_table.to_csv(analysis_path, index=False)
 
     cohort = nhanes.build_control_cohort()
