@@ -87,6 +87,12 @@ MTL_LAMBDA_CLASS = 1.0
 # the primary objective.
 MTL_LAMBDA_REG = 0.5
 
+# Robustness sweep grid for the auxiliary weight. 0.0 is the single-task
+# baseline; the configured MTL_LAMBDA_REG stays the headline and the rest probe
+# whether any auxiliary contribution is stable across the weight rather than an
+# artifact of one choice. The grid is reported in full and never selected post hoc.
+LAMBDA_SWEEP = (0.0, 0.1, 0.25, 0.5, 1.0)
+
 # Logistic elastic-net cross-check. A balanced l1/l2 mix and a modest inverse
 # regularization strength suit a small, collinear feature set.
 ELASTICNET_L1_RATIO = 0.5

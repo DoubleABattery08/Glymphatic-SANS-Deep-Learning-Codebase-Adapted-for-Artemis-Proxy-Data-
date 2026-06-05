@@ -19,6 +19,7 @@ import build_data_dictionary
 import download_nhanes
 import integrate_control
 import make_figures
+import run_lambda_sweep
 import run_validation
 from artemis_proxy import config
 
@@ -27,6 +28,7 @@ _STEPS = (
     ("Catalogue CFT70 variables", build_data_dictionary.main),
     ("Build cohorts and baseline imbalance", build_cohorts.main),
     ("Subject-level validation", run_validation.main),
+    ("Auxiliary-weight robustness sweep", run_lambda_sweep.main),
     ("Control-tier integration", integrate_control.main),
     ("Render figures", make_figures.main),
 )
