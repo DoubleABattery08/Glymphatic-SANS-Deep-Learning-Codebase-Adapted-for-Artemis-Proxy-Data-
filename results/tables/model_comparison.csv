@@ -1,0 +1,4 @@
+model,auc,accuracy,brier,auc_ci_lower,auc_ci_upper
+multitask,0.713,0.6667,0.2186,0.5339,0.8688
+single_task,0.6543,0.6111,0.2527,0.4571,0.8359
+elastic_net,0.6698,0.6111,0.2369,0.4825,0.8413

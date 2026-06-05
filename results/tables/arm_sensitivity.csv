@@ -1,0 +1,5 @@
+arm_granular,n_subjects,positive_rate
+Control,11,0.7273
+Exercise A,7,0.4286
+Exercise B,10,0.4
+Flywheel,8,0.375

@@ -1,0 +1,6 @@
+target,control_minus_countermeasure,ci_lower,ci_upper
+aux_body_weight_kg,2.6346,-8.3853,12.5429
+aux_net_water_balance_g,427.6556,-237.3978,1290.3319
+aux_mitral_ea,-0.2273,-0.4728,0.0333
+aux_ivrt,-2.361,-8.4843,3.701
+aux_tdi_e,-1.0848,-2.1291,-0.0351

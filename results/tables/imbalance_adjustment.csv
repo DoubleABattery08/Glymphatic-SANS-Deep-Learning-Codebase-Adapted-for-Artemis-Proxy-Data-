@@ -1,0 +1,4 @@
+model,countermeasure_coef,std_err,n
+unadjusted,-0.3273,0.1775,36
+adjusted_for_imbalanced_baseline,-0.3648,0.1815,36
+change_from_adjustment,-0.0375,,36
