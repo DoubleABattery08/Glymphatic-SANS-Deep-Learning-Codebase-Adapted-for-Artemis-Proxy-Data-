@@ -144,6 +144,49 @@ def regression_metrics(frame: pd.DataFrame) -> dict[str, float]:
     return {"mae": mae_statistic(frame), "r2": r2_statistic(frame)}
 
 
+def calibration_assessment(
+    predictions: pd.DataFrame, n_bins: int = 4
+) -> tuple[dict[str, float], pd.DataFrame]:
+    """Calibration slope/intercept and a binned reliability summary.
+
+    The calibration slope is the coefficient of the predicted log-odds in a
+    logistic regression of the outcome on those log-odds (1.0 is ideal; < 1.0
+    indicates over-confident probabilities). Reported alongside the Brier score,
+    this matters for the operational-screening framing where the probability, not
+    just the ranking, is acted on. The reliability table bins subjects by
+    predicted probability and compares mean prediction to observed frequency.
+    """
+
+    import statsmodels.api as sm
+
+    y = predictions["y"].to_numpy(dtype=float)
+    prob = np.clip(predictions["prob"].to_numpy(dtype=float), 1e-6, 1 - 1e-6)
+    logit = np.log(prob / (1 - prob))
+    try:
+        fit = sm.Logit(y, sm.add_constant(logit)).fit(disp=0, maxiter=200)
+        intercept, slope = float(fit.params[0]), float(fit.params[1])
+    except Exception:
+        slope, intercept = np.nan, np.nan
+
+    bins = pd.qcut(predictions["prob"], n_bins, duplicates="drop")
+    grouped = predictions.groupby(bins, observed=True)
+    reliability = pd.DataFrame(
+        {
+            "mean_predicted": grouped["prob"].mean().round(4),
+            "observed_frequency": grouped["y"].mean().round(4),
+            "n": grouped.size(),
+        }
+    ).reset_index(drop=True)
+
+    summary = {
+        "calibration_slope": round(slope, 4),
+        "calibration_intercept": round(intercept, 4),
+        "brier": round(brier_score_loss(y, prob), 4),
+        "n": int(len(predictions)),
+    }
+    return summary, reliability
+
+
 def clustered_bootstrap_ci(
     predictions: pd.DataFrame,
     statistic: Callable[[pd.DataFrame], float],

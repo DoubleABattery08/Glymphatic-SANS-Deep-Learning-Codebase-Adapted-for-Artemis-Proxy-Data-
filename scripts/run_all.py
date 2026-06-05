@@ -19,6 +19,7 @@ import build_data_dictionary
 import download_nhanes
 import integrate_control
 import make_figures
+import run_calibration
 import run_lambda_sweep
 import run_multimodal_extension
 import run_seed_stability
@@ -35,6 +36,7 @@ _STEPS = (
     ("Multi-seed stability", run_seed_stability.main),
     ("Immune-and-virus multi-modal extension", run_multimodal_extension.main),
     ("Small-sample transfer stress test", run_transfer_stress.main),
+    ("Calibration and baseline-imbalance love plot", run_calibration.main),
     ("Control-tier integration", integrate_control.main),
     ("Render figures", make_figures.main),
 )

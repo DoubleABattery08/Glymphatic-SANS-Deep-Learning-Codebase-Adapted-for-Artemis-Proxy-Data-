@@ -1,10 +1,11 @@
 """Stage 7: render the reported figures from the committed tables and extract.
 
-Produces five PNGs under ``results/figures``: baseline imbalance, the outcome
+Produces seven PNGs under ``results/figures``: baseline imbalance, the outcome
 dichotomization, the model comparison with bootstrap intervals, the per-arm
-sensitivity, and the bed rest weight against the NHANES reference. All inputs are
-the committed derived extract and result tables, so the figures reproduce without
-the gated raw package.
+sensitivity, the calibration reliability diagram, the before/after IPTW love
+plot, and the bed rest weight against the NHANES reference. All inputs are the
+committed derived extract and result tables, so the figures reproduce without the
+gated raw package.
 
 Run from the repository root::
 
@@ -96,6 +97,57 @@ def figure_arm_sensitivity() -> None:
     _save(fig, "arm_sensitivity.png")
 
 
+def figure_calibration() -> None:
+    reliability = pd.read_csv(config.TABLES / "calibration_reliability.csv")
+    summary = pd.read_csv(config.TABLES / "calibration.csv").iloc[0]
+    fig, ax = plt.subplots(figsize=(5, 5))
+    ax.plot([0, 1], [0, 1], color="#888888", linestyle="--", label="ideal")
+    ax.plot(
+        reliability["mean_predicted"],
+        reliability["observed_frequency"],
+        marker="o",
+        color="#3b6ea5",
+        label="multi-task model",
+    )
+    ax.set_xlim(0, 1)
+    ax.set_ylim(0, 1)
+    ax.set_xlabel("Mean predicted probability")
+    ax.set_ylabel("Observed frequency")
+    ax.set_title(
+        f"Reliability (slope {summary['calibration_slope']:.2f}, "
+        f"Brier {summary['brier']:.3f})"
+    )
+    ax.legend()
+    _save(fig, "calibration.png")
+
+
+def figure_love_plot() -> None:
+    love = pd.read_csv(config.TABLES / "love_plot_smd.csv")
+    love = love.sort_values("smd_before", key=lambda s: s.abs())
+    fig, ax = plt.subplots(figsize=(7, 4.5))
+    ax.scatter(
+        love["smd_before"].abs(), love["covariate"], color="#a5343b", label="before"
+    )
+    ax.scatter(
+        love["smd_after"].abs(), love["covariate"], color="#3b6ea5", label="after IPTW"
+    )
+    for _, row in love.iterrows():
+        ax.plot(
+            [abs(row["smd_before"]), abs(row["smd_after"])],
+            [row["covariate"], row["covariate"]],
+            color="#bbbbbb",
+            linewidth=1,
+            zorder=0,
+        )
+    ax.axvline(
+        imbalance.SMD_FLAG_THRESHOLD, color="#888888", linestyle="--", linewidth=1
+    )
+    ax.set_xlabel("|Standardized mean difference|")
+    ax.set_title("Baseline imbalance before and after IPTW adjustment")
+    ax.legend()
+    _save(fig, "love_plot.png")
+
+
 def figure_control_standardization() -> None:
     table = cft70.load_analysis_table()
     bed_rest = (
@@ -136,8 +188,10 @@ def main() -> None:
     figure_outcome_distribution()
     figure_model_comparison()
     figure_arm_sensitivity()
+    figure_calibration()
+    figure_love_plot()
     figure_control_standardization()
-    print(f"Wrote 5 figures to {config.FIGURES}")
+    print(f"Wrote 7 figures to {config.FIGURES}")
 
 
 if __name__ == "__main__":
