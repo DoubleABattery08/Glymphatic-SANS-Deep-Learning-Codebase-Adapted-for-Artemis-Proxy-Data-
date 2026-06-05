@@ -70,6 +70,28 @@ NHANES_COMPONENTS = {
 PRIMARY_OUTCOME_MEASURE = "LV mass"
 OUTCOME_DICHOTOMIZE_AT = "median"
 
+# Mechanism-constrained multi-task network. The trunk is deliberately tiny and
+# strongly regularized because the sample is small; an over-parameterized model
+# would memorize subjects rather than learn the adaptation signal.
+MTL_HIDDEN_DIM = 8
+MTL_DROPOUT = 0.25
+MTL_WEIGHT_DECAY = 1e-2
+MTL_LEARNING_RATE = 1e-2
+# Full-batch training for a fixed budget keeps optimization deterministic given
+# the seed; the data is small enough that mini-batching adds noise, not value.
+MTL_EPOCHS = 300
+MTL_LAMBDA_CLASS = 1.0
+# Auxiliary loss weight. The mechanism constraint is the comparison between this
+# value and zero (the single-task baseline), so the auxiliary contribution is
+# directly measurable; 0.5 keeps the auxiliaries informative without overwhelming
+# the primary objective.
+MTL_LAMBDA_REG = 0.5
+
+# Logistic elastic-net cross-check. A balanced l1/l2 mix and a modest inverse
+# regularization strength suit a small, collinear feature set.
+ELASTICNET_L1_RATIO = 0.5
+ELASTICNET_C = 1.0
+
 
 def set_global_seed(seed: int = SEED) -> None:
     """Seed every RNG the project touches.
