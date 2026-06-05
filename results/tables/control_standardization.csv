@@ -1,0 +1,2 @@
+reference_n,reference_mean_kg,reference_sd_kg,reference_sd_ci_halfwidth,bed_rest_n,bed_rest_mean_kg,bed_rest_sd_kg,bed_rest_sd_ci_halfwidth,bed_rest_mean_z_to_reference,bed_rest_median_percentile_in_reference
+526,80.6068,21.5389,1.8101,20,76.9502,11.8929,3.2325,-0.1698,50.0951
