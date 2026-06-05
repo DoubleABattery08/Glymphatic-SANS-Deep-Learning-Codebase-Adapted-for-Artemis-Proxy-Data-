@@ -1,6 +1,6 @@
 # Runtime and development dependencies, pinned for reproducibility.
-# Tested with CPython 3.13.2 on Windows (win32 10.0). The model runs on CPU;
-# no GPU is required.
+# Requires CPython >= 3.11 (developed on 3.13.2, install verified on 3.12),
+# Windows (win32 10.0). The model runs on CPU; no GPU is required.
 
 numpy==2.4.6
 pandas==3.0.3

@@ -95,7 +95,8 @@ hypertension, cardiovascular disease, or cancer.
 
 ## Environment setup
 
-Requires CPython 3.13 (developed on 3.13.2, Windows). CPU only; no GPU.
+Requires CPython 3.11 or newer (developed on 3.13.2, verified installing on
+3.12; Windows). CPU only; no GPU.
 
 ```
 python -m venv .venv
