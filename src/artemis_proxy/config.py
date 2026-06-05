@@ -62,6 +62,15 @@ NHANES_COMPONENTS = {
 }
 
 
+# Primary outcome. Left-ventricular mass is the canonical cardiac response to
+# bed-rest unloading and the cephalad fluid shift. The per-subject PRE->POST
+# change is dichotomized at its own median: a distribution-driven, non-arbitrary
+# cutpoint that yields balanced classes without tuning toward any performance
+# target. The positive class is a marked reduction (change at or below median).
+PRIMARY_OUTCOME_MEASURE = "LV mass"
+OUTCOME_DICHOTOMIZE_AT = "median"
+
+
 def set_global_seed(seed: int = SEED) -> None:
     """Seed every RNG the project touches.
 
