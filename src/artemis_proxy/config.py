@@ -98,6 +98,13 @@ LAMBDA_SWEEP = (0.0, 0.1, 0.25, 0.5, 1.0)
 # whether the modest multi-task advantage survives reinitialization.
 SEED_STABILITY_N = 10
 
+# Small-sample transfer stress test mirroring the Artemis crew size: repeatedly
+# hold out this many subjects as the test set, train on the remainder, over this
+# many deterministic splits. AUC is unstable on so few test subjects, so the test
+# reports subject-level accuracy and continuous MAE distributions instead.
+TRANSFER_TEST_SIZE = 4
+TRANSFER_N_SPLITS = 200
+
 # Logistic elastic-net cross-check. A balanced l1/l2 mix and a modest inverse
 # regularization strength suit a small, collinear feature set.
 ELASTICNET_L1_RATIO = 0.5

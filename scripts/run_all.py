@@ -22,6 +22,7 @@ import make_figures
 import run_lambda_sweep
 import run_multimodal_extension
 import run_seed_stability
+import run_transfer_stress
 import run_validation
 from artemis_proxy import config
 
@@ -33,6 +34,7 @@ _STEPS = (
     ("Auxiliary-weight robustness sweep", run_lambda_sweep.main),
     ("Multi-seed stability", run_seed_stability.main),
     ("Immune-and-virus multi-modal extension", run_multimodal_extension.main),
+    ("Small-sample transfer stress test", run_transfer_stress.main),
     ("Control-tier integration", integrate_control.main),
     ("Render figures", make_figures.main),
 )

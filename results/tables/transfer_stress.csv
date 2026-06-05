@@ -1,0 +1,3 @@
+metric,multitask_mean,single_task_mean,multitask_sd,multitask_win_fraction
+accuracy,0.6238,0.5875,0.2199,0.965
+mae,10.7524,11.0445,3.8788,0.59
