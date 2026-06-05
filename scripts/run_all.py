@@ -20,6 +20,7 @@ import download_nhanes
 import integrate_control
 import make_figures
 import run_lambda_sweep
+import run_multimodal_extension
 import run_seed_stability
 import run_validation
 from artemis_proxy import config
@@ -31,6 +32,7 @@ _STEPS = (
     ("Subject-level validation", run_validation.main),
     ("Auxiliary-weight robustness sweep", run_lambda_sweep.main),
     ("Multi-seed stability", run_seed_stability.main),
+    ("Immune-and-virus multi-modal extension", run_multimodal_extension.main),
     ("Control-tier integration", integrate_control.main),
     ("Render figures", make_figures.main),
 )

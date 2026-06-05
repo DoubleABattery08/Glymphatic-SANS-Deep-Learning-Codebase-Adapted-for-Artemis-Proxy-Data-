@@ -1,0 +1,4 @@
+model,n_auxiliaries,auc,auc_ci_lower,auc_ci_upper,accuracy,brier,cont_mae,cont_r2
+single_task,0,0.6543,0.4571,0.8359,0.6111,0.2527,10.885,-0.1733
+multitask_core,5,0.713,0.5339,0.8688,0.6667,0.2186,10.3595,-0.1164
+multitask_extended,11,0.713,0.5339,0.8673,0.6111,0.2265,10.4932,-0.1193

@@ -27,16 +27,22 @@ from torch import nn
 from artemis_proxy import config, targets
 
 
-def to_supervised(frame: pd.DataFrame) -> dict[str, np.ndarray]:
+def to_supervised(
+    frame: pd.DataFrame, aux_targets: list[str] | None = None
+) -> dict[str, np.ndarray]:
     """Split a modeling frame into model-ready arrays.
 
     Returns features ``X``, primary labels ``y``, auxiliary targets ``Z``, an
     observation-by-target boolean ``mask`` (True where the auxiliary is observed),
-    and the ``subjects`` grouping vector.
+    and the ``subjects`` grouping vector. ``aux_targets`` selects which auxiliary
+    columns form ``Z`` (defaults to the headline cardiovascular-and-fluid set);
+    pass ``targets.EXTENDED_AUXILIARY_TARGETS`` for the immune-and-virus extension.
     """
 
+    if aux_targets is None:
+        aux_targets = targets.AUXILIARY_TARGETS
     feature_cols = targets.feature_columns()
-    aux = frame[targets.AUXILIARY_TARGETS]
+    aux = frame[aux_targets]
     return {
         "X": frame[feature_cols].to_numpy(dtype=np.float64),
         "y": frame["outcome"].to_numpy(dtype=np.float64),

@@ -16,6 +16,16 @@ Leakage is prevented explicitly: the outcome's own constituent (LV mass) and its
 volumetric family (LVDV, LVSV) are never used as features or auxiliaries, and no
 auxiliary target appears among the features. These properties are asserted in
 ``assert_no_leakage`` and the modeling frame fails loudly otherwise.
+
+Exploratory multi-modal extension. ``EXPLORATORY_AUXILIARIES`` adds immune
+(T-cell subset ratios, lymphocyte count) and latent-virus (CMV, EBV, VZV copy
+number) targets so the demonstration genuinely ingests the third Artemis modality
+under heavy, unequal missingness. These are flagged exploratory: their
+mechanistic link to cardiac adaptation is weaker than the fluid and diastolic
+auxiliaries, so they probe the framework's multi-modal and masked-loss capacity
+rather than a claimed mechanism. The headline keeps the cardiovascular-and-fluid
+set; the extension is reported separately so any effect on the primary result is
+visible.
 """
 
 from __future__ import annotations
@@ -32,6 +42,21 @@ AUXILIARY_TARGETS = [
     "aux_ivrt",
     "aux_tdi_e",
 ]
+
+# Exploratory third-modality auxiliaries (immune biomarkers and latent-virus
+# reactivation), used directly from the extract. Weaker mechanistic link than the
+# core set; included to demonstrate multi-modal ingestion and masked-loss handling
+# under heavy missingness, never as the headline.
+EXPLORATORY_AUXILIARIES = [
+    "immune_cd3+/cd4+",
+    "immune_cd3+/cd8+",
+    "immune_lymphocytes",
+    "virus_cmv_copies",
+    "virus_ebv_copies",
+    "virus_vzv_copies",
+]
+
+EXTENDED_AUXILIARY_TARGETS = AUXILIARY_TARGETS + EXPLORATORY_AUXILIARIES
 
 # Outcome family excluded from inputs to avoid leaking the label.
 _OUTCOME_FAMILY = ["LV mass", "LVDV", "LVSV"]
@@ -86,7 +111,9 @@ def assert_no_leakage() -> None:
     """Fail loudly if outcome constituents or targets contaminate the features."""
 
     features = set(feature_columns())
-    contaminants = set(_OUTCOME_FAMILY) | set(AUXILIARY_TARGETS)
+    contaminants = (
+        set(_OUTCOME_FAMILY) | set(AUXILIARY_TARGETS) | set(EXPLORATORY_AUXILIARIES)
+    )
     overlap = features & contaminants
     if overlap:
         raise AssertionError(
@@ -117,6 +144,7 @@ def build_modeling_frame(table: pd.DataFrame) -> pd.DataFrame:
         "Test_Phase",
         *feature_cols,
         *AUXILIARY_TARGETS,
+        *EXPLORATORY_AUXILIARIES,
         "lv_mass_change",
         "outcome",
     ]
